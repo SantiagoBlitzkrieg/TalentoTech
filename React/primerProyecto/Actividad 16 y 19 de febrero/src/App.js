@@ -1,9 +1,15 @@
 //import logo from './logo.svg';
 import './App.css';
 import Perfil from './componentes/Perfil';
+import Contador from './componentes/Contador';
+import { useState } from 'react'
 
 function App() {
+  // Declaramos un nuevo estado de contador
+  const [contador, setContador] = useState(0);
+
   return (
+
     <div className="App">
      <div class ='contenedor-principal'>
       <h1>Mis albumes favoritos son:</h1>
@@ -44,6 +50,14 @@ function App() {
         wikipedia= 'https://es.wikipedia.org/wiki/Artaud_(%C3%A1lbum)'     
       />
 
+      {/* implementacion de un contador */}
+      <p>Has hecho clic {contador} veces </p>
+      <button onClick={()=>setContador(contador+1)}>
+        Haz clic aquí para aumentar
+      </button>
+      <button onClick={()=>setContador(contador-1)}>
+        Haz clic aquí para disminuir
+      </button>
      </div>
     </div>
   );
